@@ -6,6 +6,7 @@ const authorText = document.getElementById('author');
 const newQuoteBtn = document.getElementById('new-quote');
 const twitterBtn = document.getElementById('twitter');
 const loader = document.getElementById('loader');
+const copyQuoteBtn = document.getElementById('copy-quote');
 
 //show loading
 function loading () {
@@ -58,7 +59,16 @@ function tweetQuote () {
     window.open(twitterUrl,''); // '',allows to open url in new tab
 }
 
+function copyQuote () {
+    var range = document.createRange();
+    range.selectNode(quoteText);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+}
+
 newQuoteBtn.addEventListener('click',newQuote);
 twitterBtn.addEventListener('click',tweetQuote);
-
+copyQuoteBtn.addEventListener('click',copyQuote);
 newQuote();
