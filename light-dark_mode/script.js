@@ -6,8 +6,9 @@ const image2 = document.getElementById('image2');
 const image3 = document.getElementById('image3');
 const textBox = document.getElementById('text-box');
 
-//image Mode 
+//https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 
+//image Mode 
 function imageMode(color) {
     image1.src = `img/undraw_proud_coder_${color}.svg`;
     image2.src = `img/undraw_feeling_proud_${color}.svg`;
